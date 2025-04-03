@@ -7,4 +7,6 @@ import java.util.List;
 public interface DiemService {
 
     List<Diem> getDiems();
+
+    Diem getDiem(long id);
 }
