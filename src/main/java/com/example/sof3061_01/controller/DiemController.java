@@ -1,5 +1,6 @@
 package com.example.sof3061_01.controller;
 
+import com.example.sof3061_01.dto.DiemDto;
 import com.example.sof3061_01.entity.Diem;
 import com.example.sof3061_01.service.DiemService;
 import com.example.sof3061_01.service.impl.DiemServiceImpl;
@@ -18,10 +19,19 @@ public class DiemController {
 
     private final DiemService diemService;
 
-    @GetMapping
-    public ResponseEntity<List<Diem>> getDiems() {
+    //@GetMapping
+    //public ResponseEntity<List<Diem>> getDiems() {
+    //
+    //    List<Diem> diems = diemService.getDiems();
+    //
+    //    //return new ResponseEntity<>(diems, HttpStatus.OK);
+    //    return ResponseEntity.ok(diems);
+    //}
 
-        List<Diem> diems = diemService.getDiems();
+    @GetMapping
+    public ResponseEntity<List<DiemDto>> getDiems() {
+
+        List<DiemDto> diems = diemService.getDiems();
 
         //return new ResponseEntity<>(diems, HttpStatus.OK);
         return ResponseEntity.ok(diems);
