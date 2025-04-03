@@ -9,4 +9,6 @@ public interface DiemService {
     List<Diem> getDiems();
 
     Diem getDiem(long id);
+
+    Diem updateDiem(Diem diem, long id);
 }
