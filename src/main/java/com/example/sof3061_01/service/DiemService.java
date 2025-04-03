@@ -11,4 +11,6 @@ public interface DiemService {
     Diem getDiem(long id);
 
     Diem updateDiem(Diem diem, long id);
+
+    void deleteDiem(long id);
 }

@@ -40,4 +40,18 @@ public class DiemServiceImpl implements DiemService {
 
         return diemRepository.save(exitstingDiem);
     }
+
+    @Override
+    public void deleteDiem(long id) {
+
+        Diem exitstingDiem = diemRepository
+                .findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Diem not found with id: " + id));
+
+        //diemRepository.deleteById(id);
+        diemRepository.delete(exitstingDiem);
+
+    }
+
+
 }
