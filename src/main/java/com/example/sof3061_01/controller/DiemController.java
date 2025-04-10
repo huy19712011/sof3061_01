@@ -4,6 +4,7 @@ import com.example.sof3061_01.dto.DiemDto;
 import com.example.sof3061_01.entity.Diem;
 import com.example.sof3061_01.service.DiemService;
 import com.example.sof3061_01.service.impl.DiemServiceImpl;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -46,7 +47,7 @@ public class DiemController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Diem> updateDiem(@RequestBody Diem diem, @PathVariable("id") long id) {
+    public ResponseEntity<Diem> updateDiem(@Valid @RequestBody Diem diem, @PathVariable("id") long id) {
 
         Diem updatedDiem = diemService.updateDiem(diem, id);
 
